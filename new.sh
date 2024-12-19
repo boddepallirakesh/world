@@ -1,9 +1,7 @@
 #!/bin/bash
 # Disk Usage Monitoring Script
-
 # Set the threshold for disk usage (in percentage)
 THRESHOLD=80
-
 # Get the current disk usage percentage for the root filesystem
 CURRENT_USAGE=$(df / | grep / | awk '{ print $5 }' | sed 's/%//g')
 
