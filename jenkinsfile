@@ -1,0 +1,49 @@
+pipeline {
+    agent any
+    
+    environment {
+        // Define environment variables
+        MY_VAR = "value"
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout code from a Git repository
+                checkout scm
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                // Run a shell command to build your project
+                sh 'echo "Building the project..."'
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                // Run tests
+                sh 'echo "Running tests..."'
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                // Deploy the project
+                sh 'echo "Deploying the project..."'
+            }
+        }
+    }
+    
+    post {
+        success {
+            // Run post-actions if the pipeline is successful
+            echo 'Pipeline executed successfully!'
+        }
+        failure {
+            // Run post-actions if the pipeline fails
+            echo 'Pipeline failed.'
+        }
+    }
+}
