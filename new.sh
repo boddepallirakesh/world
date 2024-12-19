@@ -1,1 +1,1 @@
-mkdir new
+nano rakesh
