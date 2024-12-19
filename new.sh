@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Disk Usage Monitoring Script
 
 # Set the threshold for disk usage (in percentage)
