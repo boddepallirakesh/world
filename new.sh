@@ -1,33 +1,18 @@
 #!/bin/bash
 
-# This is a comment
-echo "Hello, world!"  # This prints a message
+# Disk Usage Monitoring Script
 
-# Variables
-name="John"
-echo "Hello, $name"
+# Set the threshold for disk usage (in percentage)
+THRESHOLD=80
 
-# If-else statement
-if [ $name == "John" ]; then
-  echo "The name is John"
+# Get the current disk usage percentage for the root filesystem
+CURRENT_USAGE=$(df / | grep / | awk '{ print $5 }' | sed 's/%//g')
+
+# Check if the current usage exceeds the threshold
+if [ "$CURRENT_USAGE" -gt "$THRESHOLD" ]; then
+  # Send an alert (you can modify this to send an email or other notification)
+  echo "Warning: Disk usage is above ${THRESHOLD}% on the root filesystem." | mail -s "Disk Usage Alert" user@example.com
+  echo "Disk usage is at ${CURRENT_USAGE}%. Alert has been sent."
 else
-  echo "The name is not John"
+  echo "Disk usage is at ${CURRENT_USAGE}%, which is below the threshold."
 fi
-
-# Loop (for loop example)
-for i in {1..5}
-do
-  echo "This is iteration number $i"
-done
-
-# Creating a directory and changing to it
-mkdir my_directory
-cd my_directory
-echo "You are now in $(pwd)"
-
-# Create a simple file and write to it
-echo "This is a simple file" > myfile.txt
-cat myfile.txt
-
-# End of script
-echo "Script execution completed!"
