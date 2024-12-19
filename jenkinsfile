@@ -1,7 +1,6 @@
 pipeline {
     agent any
-    
-    environment {
+   environment {
         // Define environment variables
         MY_VAR = "value"
     }
