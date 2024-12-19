@@ -1,1 +1,1 @@
-nano rakesh
+cat rakesh
