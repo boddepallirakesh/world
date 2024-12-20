@@ -1,3 +1,3 @@
 #!/bin/bash
 
-touch new-jenkins-project
+touch new-jenkins-project-1
