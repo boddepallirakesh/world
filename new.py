@@ -1,30 +1,35 @@
-import random
+// A simple Java program to calculate the area of a rectangle
+public class Rectangle {
+    // Instance variables
+    private double length;
+    private double width;
 
-def number_guessing_game():
-    # Generate a random number between 1 and 100
-    secret_number = random.randint(1, 100)
-    attempts = 0
-    print("Welcome to the Number Guessing Game!")
-    print("I'm thinking of a number between 1 and 100. Can you guess it?")
-    
-    while True:
-        # Get the user's guess
-        try:
-            guess = int(input("Enter your guess: "))
-            attempts += 1
-        except ValueError:
-            print("Please enter a valid number.")
-            continue
+    // Constructor to initialize the rectangle
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
 
-        # Check the guess
-        if guess < secret_number:
-            print("Too low! Try again.")
-        elif guess > secret_number:
-            print("Too high! Try again.")
-        else:
-            print(f"Congratulations! You guessed the number in {attempts} attempts.")
-            break
+    // Method to calculate the area
+    public double calculateArea() {
+        return length * width;
+    }
 
-# Run the game
-number_guessing_game()
+    // Method to display the rectangle's dimensions and area
+    public void displayInfo() {
+        System.out.println("Rectangle Dimensions:");
+        System.out.println("Length: " + length);
+        System.out.println("Width: " + width);
+        System.out.println("Area: " + calculateArea());
+    }
+
+    // Main method to run the program
+    public static void main(String[] args) {
+        // Create a Rectangle object
+        Rectangle myRectangle = new Rectangle(5.0, 3.5);
+
+        // Display information about the rectangle
+        myRectangle.displayInfo();
+    }
+}
 
