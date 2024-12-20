@@ -1,15 +1,37 @@
-#!/bin/bash
+def add(a, b):
+    return a + b
 
-# Define folder and file names
-folder_name="my_folder"
-file1="file1.txt"
-file2="file2.txt"
+def subtract(a, b):
+    return a - b
 
-# Create the folder
-mkdir "$folder_name"
+def multiply(a, b):
+    return a * b
 
-# Create the files inside the folder
-touch "$folder_name/$file1" "$folder_name/$file2"
+def divide(a, b):
+    if b != 0:
+        return a / b
+    else:
+        return "Error! Division by zero."
 
-echo "Folder '$folder_name' and files '$file1' and '$file2' created successfully."
+print("Select operation:")
+print("1. Add")
+print("2. Subtract")
+print("3. Multiply")
+print("4. Divide")
+
+choice = input("Enter choice (1/2/3/4): ")
+
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+
+if choice == '1':
+    print(f"The result is: {add(num1, num2)}")
+elif choice == '2':
+    print(f"The result is: {subtract(num1, num2)}")
+elif choice == '3':
+    print(f"The result is: {multiply(num1, num2)}")
+elif choice == '4':
+    print(f"The result is: {divide(num1, num2)}")
+else:
+    print("Invalid Input")
 
