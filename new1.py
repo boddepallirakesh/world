@@ -1,5 +1,4 @@
 #!/bin/bash
-#!/bin/bash
 
 # Define folder and file names
 folder_name="my_folder"
