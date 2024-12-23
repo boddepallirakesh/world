@@ -1,2 +1,2 @@
-name = input("What is your name? ")
-print(f"Hello, {name}!")
+#!/usr/bin/env python3
+print("Hello, Linux!")
