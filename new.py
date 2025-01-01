@@ -1,32 +1,43 @@
-from tkinter import * # Import tkinter
-from StillClock import StillClock
-   
-def setNewTime():
-    clock.setHour(hour.get())
-    clock.setMinute(minute.get())
-    clock.setSecond(second.get())
-    
-window = Tk() # Create a window
-window.title("Change Clock Time") # Set title
+# Variables and Data Types
+name = "Alice"   # String
+age = 30         # Integer
+height = 5.6     # Float
+is_student = True  # Boolean
 
-clock = StillClock(window) # Create a clock
-clock.pack()
+# Conditional Statements
+if age < 18:
+    print(f"{name} is a minor.")
+elif 18 <= age <= 65:
+    print(f"{name} is an adult.")
+else:
+    print(f"{name} is a senior citizen.")
 
-frame = Frame(window)
-frame.pack()
-Label(frame, text = "Hour: ").pack(side = LEFT)
-hour = IntVar()
-hour.set(clock.getHour())
-Entry(frame, textvariable = hour, width = 2).pack(side = LEFT) 
-Label(frame, text = "Minute: ").pack(side = LEFT)
-minute = IntVar()
-minute.set(clock.getMinute())
-Entry(frame, textvariable = minute, width = 2).pack(side = LEFT) 
-Label(frame, text = "Second: ").pack(side = LEFT)
-second = IntVar()
-second.set(clock.getMinute())
-Entry(frame, textvariable = second, width = 2).pack(side = LEFT) 
-Button(frame, text = "Set New Time", 
-       command = setNewTime).pack(side = LEFT) 
+# Loops
+print("Counting to 5:")
+for i in range(1, 6):
+    print(i)
 
-window.mainloop() # Create an event loop
+# While Loop
+countdown = 5
+print("Countdown:")
+while countdown > 0:
+    print(countdown)
+    countdown -= 1
+
+# Function Definition
+def greet(person_name):
+    return f"Hello, {person_name}!"
+
+# Calling a Function
+greeting_message = greet(name)
+print(greeting_message)
+
+# Lists and Iteration
+fruits = ["apple", "banana", "cherry"]
+print("Fruits:")
+for fruit in fruits:
+    print(fruit)
+
+# Dictionary and Accessing Keys
+person = {"name": "Alice", "age": 30, "city": "Wonderland"}
+print(f"{person['name']} lives in {person['city']}.")
