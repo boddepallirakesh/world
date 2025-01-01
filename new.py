@@ -3,7 +3,6 @@ name = "Alice"   # String
 age = 30         # Integer
 height = 5.6     # Float
 is_student = True  # Boolean
-
 # Conditional Statements
 if age < 18:
     print(f"{name} is a minor.")
